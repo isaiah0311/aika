@@ -4,6 +4,15 @@
             "name": "Win32",
             "defines": [
                 "_CRT_SECURE_NO_WARNINGS"
+            ],
+            "includePath": [
+                "${workspaceFolder}/src/**"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/src/**"
             ]
         }
     ],
