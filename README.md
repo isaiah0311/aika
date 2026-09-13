@@ -6,7 +6,8 @@ A top-down action role playing game.
 ├── .vscode                    <- Settings and configurations
 ├── build                      <- Compiled binaries and build artifacts
 ├── src                        <- Source files
-│   └── core
+│   ├── core
+│   └── logging
 ├── .gitignore
 ├── CMakeLists.txt
 └── README.md

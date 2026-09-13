@@ -5,10 +5,9 @@
  * Entry point for the game.
  */
 
-#include <stdio.h>
 #include <stdlib.h>
 
-#include "core/platform.h"
+#include "logging/logging.h"
 
 /**
  * Entry point for the game.
@@ -16,10 +15,11 @@
  * \return Exit code.
  */
 int main() {
-#ifdef AIKA_PLATFORM_WINDOWS
-    printf("Hello, Windows!\n");
-#elif defined(AIKA_PLATFORM_LINUX)
-    printf("Hello, Linux!\n");
-#endif
+    aika_fatal("Message.");
+    aika_error("Message.");
+    aika_warn("Message.");
+    aika_info("Message.");
+    aika_debug("Message.");
+
     return EXIT_SUCCESS;
 }
