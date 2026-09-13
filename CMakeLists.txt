@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME}
+    src/core/application.c
+    src/core/application.h
     src/core/main.c
     src/core/platform.h
     src/logging/logging.c

@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 
-#include "logging/logging.h"
+#include "core/application.h"
 
 /**
  * Entry point for the game.
@@ -15,11 +15,12 @@
  * \return Exit code.
  */
 int main() {
-    aika_fatal("Message.");
-    aika_error("Message.");
-    aika_warn("Message.");
-    aika_info("Message.");
-    aika_debug("Message.");
+    if (!aika_application_create()) {
+        return EXIT_FAILURE;
+    }
+
+    aika_application_start();
+    aika_application_destroy();
 
     return EXIT_SUCCESS;
 }
