@@ -7,7 +7,8 @@ A top-down action role playing game.
 ├── build                      <- Compiled binaries and build artifacts
 ├── src                        <- Source files
 │   ├── core
-│   └── logging
+│   ├── logging
+│   └── window
 ├── .gitignore
 ├── CMakeLists.txt
 └── README.md
@@ -20,6 +21,9 @@ A top-down action role playing game.
 - C/C++: `ms-vscode.cpptools`
 - C/C++ DevTools: `ms-vscode.cpp-devtools`
 - CMake Tools: `ms-vscode.cmake-tools`
+### Libraries
+**Linux:**
+- Xlib
 
 ## How to Build
 ### VS Code

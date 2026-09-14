@@ -13,6 +13,9 @@ add_executable(${PROJECT_NAME}
     src/core/platform.h
     src/logging/logging.c
     src/logging/logging.h
+    src/window/window_linux.c
+    src/window/window_windows.c
+    src/window/window.h
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src)
@@ -36,4 +39,9 @@ else()
         -Wpedantic
         -Werror
     )
+
+    if(LINUX)
+        find_package(X11 REQUIRED)
+        target_link_libraries(${PROJECT_NAME} PRIVATE X11::X11)
+    endif()
 endif()

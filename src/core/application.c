@@ -10,6 +10,7 @@
 #include <string.h>
 
 #include "logging/logging.h"
+#include "window/window.h"
 
 typedef struct aika_application {
     bool created, running;
@@ -20,7 +21,7 @@ static aika_application app = { 0 };
 /** Main game loop. */
 static void run() {
     while (app.running) {
-        aika_application_stop();
+        aika_window_pump_messages();
     }
 }
 
@@ -33,6 +34,11 @@ bool aika_application_create() {
     if (app.created) {
         aika_warn("Failed to create application: "
             "Application has already been created.");
+        return false;
+    }
+
+    if (!aika_window_create("Aika", 400, 300)) {
+        aika_fatal("Failed to create application: aika_window_create.");
         return false;
     }
 
@@ -52,6 +58,8 @@ void aika_application_destroy() {
     } else if (app.running) {
         aika_application_stop();
     }
+
+    aika_window_destroy();
 
     memset(&app, 0, sizeof(app));
 
