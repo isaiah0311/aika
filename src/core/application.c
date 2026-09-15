@@ -9,6 +9,7 @@
 
 #include <string.h>
 
+#include "input/input.h"
 #include "logging/logging.h"
 #include "window/window.h"
 
@@ -22,6 +23,11 @@ static aika_application app = { 0 };
 static void run() {
     while (app.running) {
         aika_window_pump_messages();
+        if (aika_input_is_key_down(AIKA_KEYBOARD_KEY_ESCAPE)) {
+            aika_application_stop();
+        }
+
+        aika_input_save_state();
     }
 }
 

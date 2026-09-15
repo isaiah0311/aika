@@ -7,6 +7,7 @@ A top-down action role playing game.
 ├── build                      <- Compiled binaries and build artifacts
 ├── src                        <- Source files
 │   ├── core
+│   ├── input
 │   ├── logging
 │   └── window
 ├── .gitignore

@@ -11,6 +11,8 @@ add_executable(${PROJECT_NAME}
     src/core/application.h
     src/core/main.c
     src/core/platform.h
+    src/input/input.c
+    src/input/input.h
     src/logging/logging.c
     src/logging/logging.h
     src/window/window_linux.c
